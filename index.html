@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Key Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptography Key Management System</h1>
+
+        <!-- Authentication Section -->
+        <div id="auth-section" class="section">
+            <h2>Authenticate User</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="authenticateUser()">Login</button>
+            <div id="auth-message" class="message"></div>
+        </div>
+
+        <!-- Security Question Section -->
+        <div id="security-section" class="section hidden">
+            <h2>Security Question</h2>
+            <div id="security-question"></div>
+            <input type="text" id="security-answer" placeholder="Answer">
+            <button onclick="verifySecurityAnswer()">Submit</button>
+            <div id="security-message" class="message"></div>
+        </div>
+
+        <!-- Key Management Section -->
+        <div id="key-section" class="section hidden">
+            <h2>Generate Key</h2>
+            <input type="number" id="key-length" placeholder="Key Length in bits">
+            <button onclick="generateKey()">Generate Key</button>
+            <div id="key-message" class="message"></div>
+
+            <h2>Manage Keys</h2>
+            <button onclick="viewKeys()">View Keys</button>
+            <div id="keys-list" class="hidden"></div>
+            <button onclick="revokeKeyPrompt()">Revoke Key</button>
+            <input type="text" id="revoke-key" class="hidden" placeholder="Key to Revoke">
+            <button id="revoke-button" class="hidden" onclick="revokeKey()">Revoke</button>
+
+            <!-- Admin Section -->
+            <div id="admin-section" class="section hidden">
+                <h2>Admin Actions</h2>
+                <button onclick="showAddUser()">Add User</button>
+                <div id="add-user" class="hidden">
+                    <input type="text" id="new-username" placeholder="New Username">
+                    <input type="password" id="new-password" placeholder="New Password">
+                    <button onclick="addUser()">Add</button>
+                </div>
+                <button onclick="showRemoveUser()">Remove User</button>
+                <div id="remove-user" class="hidden">
+                    <input type="text" id="remove-username" placeholder="Username to Remove">
+                    <button onclick="removeUser()">Remove</button>
+                </div>
+                <div id="admin-message" class="message"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
